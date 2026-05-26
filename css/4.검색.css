@@ -1,0 +1,56 @@
+.search-bar-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#game-search-input {
+    width: 100%;
+    padding: 15px 20px;
+    padding-right: 50px;
+    background-color: #316282; 
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 18px;
+    outline: none;
+}
+
+#game-search-input::placeholder {
+    color: #8db9e2;
+}
+
+.search-results-info {
+    margin-bottom: 20px;
+    color: #acb2b8;
+    font-size: 14px;
+}
+
+.game-list-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+
+    /* 핵심 설정: 게임 칸만 따로 드래그 가능하게 함 */
+    max-height: 500px;       /* 원하는 높이로 설정 (예: 500px) */
+    overflow-y: auto;        /* 내용이 많아지면 세로 스크롤 생성 */
+    padding-right: 10px;     /* 스크롤바와 카드 사이의 간격 */
+}
+
+/* 스크롤바 디자인 (스팀 느낌의 어두운 스타일) */
+.game-list-vertical::-webkit-scrollbar {
+    width: 8px;
+}
+
+.game-list-vertical::-webkit-scrollbar-track {
+    background: #171a21;     /* 스크롤바 배경 */
+}
+
+.game-list-vertical::-webkit-scrollbar-thumb {
+    background: #3d4450;     /* 스크롤바 막대 */
+    border-radius: 4px;
+}
+
+.game-list-vertical::-webkit-scrollbar-thumb:hover {
+    background: #66c0f4;     /* 마우스 올렸을 때 색상 */
+}

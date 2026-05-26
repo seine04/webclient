@@ -1,0 +1,74 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.steam-header {
+    width: 100%;
+}
+
+/* 1층: 로고 영역 */
+.logo-area {
+    background-color: #2c323f; 
+    padding: 30px 0; 
+}
+
+.main-logo {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.logo-text {
+    color: #ffffff;
+    font-size: 42px; 
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* 2층: 메뉴 바 영역 */
+.nav-bar {
+    background-color: #2d435e; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    /* ⭐ 메뉴바 자체도 넘치는 글자를 깔끔하게 숨기도록 안전장치 설정 */
+    overflow: hidden; 
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;       /* 가로 정렬 */
+    height: 50px;        /* 메뉴바 높이 고정 */
+    align-items: center;
+    
+    /* ✂️ 핵심: 창이 좁아져도 절대 아래로 떨어지지 않고 잘리게 만드는 속성 */
+    flex-wrap: nowrap;   /* 절대 아래 줄로 내려가지 않음 (한 줄 유지) */
+    overflow: hidden;    /* 화면 폭보다 넘치는 메뉴 글자는 강제로 숨김 */
+}
+
+.menu-list li {
+    /* ⭐ 글자가 공간 부족으로 찌그러지지 않고 원래 크기를 유지하며 잘리도록 설정 */
+    flex-shrink: 0;      
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: #b8b6b4;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 15px;
+    line-height: 50px;   /* 원래 디자인대로 높이 중앙 정렬 */
+    display: block;
+    transition: background 0.2s;
+    
+    /* ⭐ 글자 자체도 절대 줄바꿈 되지 않도록 설정 */
+    white-space: nowrap; 
+}
+
+.menu-list li a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.05); 
+}

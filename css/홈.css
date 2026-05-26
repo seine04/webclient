@@ -1,0 +1,182 @@
+/* 공통 컨테이너: 중앙 정렬용 */
+
+.main-game {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.main-intro {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+}
+/* 메인게임 로고 넣기*/
+.featured-main-img img {
+    width: 100%;    /* 부모 넓이에 맞춤 */
+    height: 100%;   /* 부모 높이에 맞춤 */
+    object-fit: cover; /* 이미지가 찌그러지지 않게 비율 유지하며 채움 */
+}
+
+/* 중단 정리용 css */
+/* 섹션 공통 스타일 */
+.game-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+/* 추천 게임 큰 배너 레이아웃 */
+.featured-banner {
+    display: flex;
+    background-color: #1f3446;
+    height: 300px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.featured-main-img {
+    flex: 2;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.featured-side-info {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 최신/인기 게임 좌우 배치 */
+.game-stack-view {
+    display: flex;
+    flex-direction: column; /* 가로가 아닌 세로로 정렬 */
+    gap: 40px; /* 최신 게임과 인기 게임 섹션 사이의 넉넉한 간격 */
+}
+
+.stack-section {
+    width: 100%; /* 가로를 꽉 채움 */
+}
+
+.section-title {
+    color: #66c0f4; /* 제목에 스팀 블루 포인트를 줘도 예쁩니다 */
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+}
+
+.game-list-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* 카드 사이의 좁은 간격 */
+}
+
+
+.mini-card:hover {
+    background-color: #39557a;
+    color: #fff;
+    transform: translateX(5px); /* 마우스 올리면 살짝 오른쪽으로 미는 효과 */
+}
+
+/* --- 업그레이드된 mini-card 스타일 --- */
+.mini-card {
+    background-color: #273950;
+    height: 65px; /* 스팀 리스트 표준 높이 */
+    display: flex;
+    align-items: center;
+    padding: 0 15px 0 0; /* 왼쪽은 이미지와 붙게 */
+    border-radius: 2px;
+    overflow: hidden; /* 이미지가 튀어나가지 않게 */
+    transition: transform 0.2s, background 0.2s;
+    cursor: pointer;
+}
+
+/* 1. 이미지 영역 */
+.card-img {
+    width: 120px; /* 썸네일 너비 고정 */
+    height: 100%;
+    margin-right: 15px;
+    flex-shrink: 0; /* flex 안에서 크기 고정 */
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 썸네일이 비율 유지하며 채움 */
+}
+
+/* 2. 제목/정보 영역 */
+.card-info {
+    flex: 1; /* 남은 가로 공간 모두 차지 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-title {
+    color: #c7d5e0;
+    font-size: 15px;
+    margin-bottom: 3px;
+    white-space: nowrap; /* 제목 길면 한줄 처리 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* ...으로 생략 */
+}
+
+.game-genre {
+    font-size: 12px;
+    color: #556772;
+}
+
+/* 3. 가격 및 할인 영역 (가장 중요) */
+.card-price-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+/* 스팀 초록색 할인 배지 */
+.discount-badge {
+    background-color: #4c6b22; 
+    color: #beee11;
+    font-weight: bold;
+    padding: 5px 8px;
+    font-size: 14px;
+    height: 100%; /* 카드 높이에 맞춤 */
+    display: flex;
+    align-items: center;
+}
+
+.price-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 우측 정렬 */
+}
+
+.original-price {
+    color: #707070;
+    font-size: 11px;
+    text-decoration: line-through; /* 취소선 */
+}
+
+.final-price {
+    color: #acb2b8;
+    font-size: 13px;
+}
+
+/* 할인이 없을 때 가격 정렬 */
+.price-box.no-discount {
+    justify-content: center;
+}

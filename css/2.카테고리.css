@@ -1,0 +1,203 @@
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* 화면 크기에 맞게 자동 조절 */
+    gap: 20px;
+}
+
+.category-item {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.category-item.active {
+    outline: 2px solid #66c0f4;
+    transform: scale(1.05);
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+
+
+/* 장르별 배경색 (나중에 이미지로 교체 가능) */
+.action { background: linear-gradient(135deg, #ff5f6d, #ffc371); }
+.roguelike { background: linear-gradient(135deg, #11998e, #38ef7d); }
+.strategy { background: linear-gradient(135deg, #00b4db, #0083b0); }
+.adventure { background: linear-gradient(135deg, #f2994a, #f2c94c); }
+.simulation { background: linear-gradient(135deg, #2c3e50, #4ca1af); }
+.rpg { background: linear-gradient(135deg, #e52d27, #b31217);}
+/* 테마 태그 스타일 */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag-item {
+    background-color: #3d4450;
+    color: #66c0f4;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.tag-item:hover {
+    background-color: #66c0f4;
+    color: white;
+}
+/* 필터링 시 숨김 처리 */
+.hidden {
+    display: none !important;
+}
+
+
+/* --- 카테고리 페이지 전용 레이아웃 --- */
+.content-area {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+/* 1. 장르별 탐색 (상단 그리드) */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+
+
+.category-name {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+
+
+.mini-card {
+    background-color: #273950; /* 홈 CSS에서 사용한 색상과 통일 */
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    border-radius: 2px;
+    overflow: hidden;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+
+.mini-card:hover {
+    background-color: #39557a;
+}
+
+/* 이미지 박스 */
+.card-img {
+    width: 140px;
+    height: 100%;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 정보 영역 */
+.card-info {
+    flex: 1;
+}
+
+.game-title {
+    color: #c7d5e0;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.game-genre {
+    color: #556772;
+    font-size: 13px;
+}
+
+/* 가격 영역 */
+.card-price-area {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.final-price {
+    color: #acb2b8;
+    font-size: 14px;
+}
+
+
+.game-list-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+
+    /* 핵심 설정: 게임 칸만 따로 드래그 가능하게 함 */
+    max-height: 500px;       /* 원하는 높이로 설정 (예: 500px) */
+    overflow-y: auto;        /* 내용이 많아지면 세로 스크롤 생성 */
+    padding-right: 10px;     /* 스크롤바와 카드 사이의 간격 */
+}
+
+/* 스크롤바 디자인 (스팀 느낌의 어두운 스타일) */
+.game-list-vertical::-webkit-scrollbar {
+    width: 8px;
+}
+
+.game-list-vertical::-webkit-scrollbar-track {
+    background: #171a21;     /* 스크롤바 배경 */
+}
+
+.game-list-vertical::-webkit-scrollbar-thumb {
+    background: #3d4450;     /* 스크롤바 막대 */
+    border-radius: 4px;
+}
+
+.game-list-vertical::-webkit-scrollbar-thumb:hover {
+    background: #66c0f4;     /* 마우스 올렸을 때 색상 */
+}
+
+.wish-add-btn {
+    background: #3d4450;
+    color: #acb2b8;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 8px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.wish-add-btn:hover {
+    background: #66c0f4; /* 스팀 블루 강조색 */
+    color: white;
+}
+
+/* 이미 추가된 상태일 때의 스타일 */
+.wish-add-btn.active {
+    color: #ff5f6d; /* 하트 색상을 빨간색으로 */
+}
