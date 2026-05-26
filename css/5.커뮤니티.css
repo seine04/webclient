@@ -75,6 +75,7 @@ td.td-title { color: #c7d5e0; }
     border: 1px solid #66c0f4;
     border-radius: 4px;
     width: 500px;
+    max-width: 90%;
     padding: 20px;
 }
 
